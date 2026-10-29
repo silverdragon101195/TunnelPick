@@ -1,0 +1,28 @@
+# Build output
+bin/
+obj/
+dist/
+*.exe
+*.dll
+*.sys
+*.pdb
+
+# Third-party binaries are downloaded by scripts\get-windivert.ps1 and never committed
+third_party/
+
+# Secrets and local data: a WireGuard config holds a private key
+# The portable app keeps its data next to the executable
+data/
+*.conf
+*.key
+*.pem
+*.dpapi
+itest.out.txt
+wdprobe.out.txt
+*.log
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo

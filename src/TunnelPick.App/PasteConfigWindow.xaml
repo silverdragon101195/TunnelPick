@@ -1,0 +1,37 @@
+<Window x:Class="TunnelPick.App.PasteConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Paste WireGuard config" Width="640" Height="520" MinWidth="480" MinHeight="360"
+        Icon="Assets/TunnelPick.ico" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Window.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Margin" Value="8,0,0,0" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Name" VerticalAlignment="Center" Margin="0,0,8,0" />
+            <TextBox x:Name="NameBox" />
+        </DockPanel>
+
+        <TextBlock Grid.Row="1" Margin="0,0,0,6" Foreground="{StaticResource SecondaryTextBrush}" TextWrapping="Wrap"
+                   Text="Paste the whole config, starting at [Interface]. The private key is stored with Windows data protection and is not kept anywhere else." />
+
+        <TextBox Grid.Row="2" x:Name="ConfigBox" AcceptsReturn="True" AcceptsTab="False" TextWrapping="NoWrap"
+                 FontFamily="Consolas" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                 TextChanged="OnConfigChanged" />
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button x:Name="ImportButton" Content="Import" FontWeight="SemiBold" MinWidth="90" IsDefault="False" Click="OnImport" IsEnabled="False" />
+            <Button Content="Cancel" MinWidth="90" IsCancel="True" />
+        </StackPanel>
+    </Grid>
+</Window>

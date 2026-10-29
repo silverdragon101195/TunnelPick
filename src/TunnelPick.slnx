@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="TunnelPick.App/TunnelPick.App.csproj" />
+  <Project Path="TunnelPick.Core/TunnelPick.Core.csproj" />
+  <Project Path="TunnelPick.Tests/TunnelPick.Tests.csproj" />
+</Solution>
